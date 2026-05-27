@@ -1,0 +1,139 @@
+[gd_scene format=4 uid="uid://4pqund3nukl7"]
+
+[ext_resource type="Script" uid="uid://5uwx7xroyvp0" path="res://Walk.cs" id="1_epypp"]
+[ext_resource type="Texture2D" uid="uid://by534cj5lwkqw" path="res://charSketchyRobin.png" id="1_wtcfe"]
+[ext_resource type="Texture2D" uid="uid://dtqr6n0wrd58h" path="res://groundTilemap.png" id="2_0e48y"]
+[ext_resource type="Texture2D" uid="uid://oi4sl1nk40fk" path="res://NPC.png" id="4_0hol4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0e48y"]
+atlas = ExtResource("1_wtcfe")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epypp"]
+atlas = ExtResource("1_wtcfe")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hol4"]
+atlas = ExtResource("1_wtcfe")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6r6c"]
+atlas = ExtResource("1_wtcfe")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y32ns"]
+resource_name = "idle"
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0e48y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epypp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hol4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6r6c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0hol4"]
+texture = ExtResource("2_0e48y")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_kdubu"]
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_0hol4")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdubu"]
+atlas = ExtResource("4_0hol4")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d21ai"]
+atlas = ExtResource("4_0hol4")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rj586"]
+atlas = ExtResource("4_0hol4")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4d7sh"]
+atlas = ExtResource("4_0hol4")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ir8iy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdubu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d21ai")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rj586")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4d7sh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=2096411078]
+
+[node name="Apothecary" type="CharacterBody2D" parent="." unique_id=2009475576]
+top_level = true
+script = ExtResource("1_epypp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Apothecary" unique_id=1241159592]
+scale = Vector2(0.5, 0.6)
+shape = SubResource("RectangleShape2D_epypp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Apothecary" unique_id=538985206]
+sprite_frames = SubResource("SpriteFrames_y32ns")
+autoplay = "default"
+frame_progress = 0.08172443
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1011147461]
+tile_map_data = PackedByteArray("AAD6//z/AQABAAEAAAD6//3/AQABAAEAAAD6//7/AQABAAEAAAD6////AQABAAEAAAD6/wAAAQABAAEAAAD6/wEAAQABAAEAAAD6/wIAAQABAAEAAAD6/wMAAQABAAEAAAD6/wQAAQABAAEAAAD7//z/AQABAAEAAAD7//3/AQABAAEAAAD7//7/AQABAAEAAAD7////AQABAAEAAAD7/wAAAQABAAEAAAD7/wEAAQABAAEAAAD7/wIAAQABAAEAAAD7/wMAAQABAAEAAAD7/wQAAQABAAEAAAD8//z/AQABAAEAAAD8//3/AQABAAEAAAD8//7/AQABAAEAAAD8////AQABAAEAAAD8/wAAAQABAAEAAAD8/wEAAQABAAEAAAD8/wIAAQABAAEAAAD8/wMAAQABAAEAAAD8/wQAAQABAAEAAAD9//z/AQABAAEAAAD9//3/AQABAAEAAAD9//7/AQABAAEAAAD9////AQABAAEAAAD9/wAAAQABAAEAAAD9/wEAAQABAAEAAAD9/wIAAQABAAEAAAD9/wMAAQABAAEAAAD9/wQAAQABAAEAAAD+//z/AQABAAEAAAD+//3/AQABAAEAAAD+//7/AQABAAEAAAD+////AQABAAEAAAD+/wAAAQABAAEAAAD+/wEAAQABAAEAAAD+/wIAAQABAAEAAAD+/wMAAQABAAEAAAD+/wQAAQABAAEAAAD///z/AQABAAEAAAD///3/AQABAAEAAAD///7/AQABAAEAAAD/////AQABAAEAAAD//wAAAQABAAEAAAD//wEAAQABAAEAAAD//wIAAQABAAEAAAD//wMAAQABAAEAAAD//wQAAQABAAEAAAAAAPz/AQABAAEAAAAAAP3/AQABAAEAAAAAAP7/AQABAAEAAAAAAP//AQABAAEAAAAAAAAAAQABAAEAAAAAAAEAAQABAAEAAAAAAAIAAQABAAEAAAAAAAMAAQABAAEAAAAAAAQAAQABAAEAAAABAPz/AQABAAEAAAABAP3/AQABAAEAAAABAP7/AQABAAEAAAABAP//AQABAAEAAAABAAAAAQABAAEAAAABAAEAAQABAAEAAAABAAIAAQABAAEAAAABAAMAAQABAAEAAAABAAQAAQABAAEAAAACAPz/AQABAAEAAAACAP3/AQABAAEAAAACAP7/AQABAAEAAAACAP//AQABAAEAAAACAAAAAQABAAEAAAACAAEAAQABAAEAAAACAAIAAQABAAEAAAACAAMAAQABAAEAAAACAAQAAQABAAEAAAADAPz/AQABAAEAAAADAP3/AQABAAEAAAADAP7/AQABAAEAAAADAP//AQABAAEAAAADAAAAAQABAAEAAAADAAEAAQABAAEAAAADAAIAAQABAAEAAAADAAMAAQABAAEAAAADAAQAAQABAAEAAAAEAPz/AQABAAEAAAAEAP3/AQABAAEAAAAEAP7/AQABAAEAAAAEAP//AQABAAEAAAAEAAAAAQABAAEAAAAEAAEAAQABAAEAAAAEAAIAAQABAAEAAAAEAAMAAQABAAEAAAAEAAQAAQABAAEAAAD6//v/AQABAAEAAAD7//v/AQABAAEAAAD8//v/AQABAAEAAAD9//v/AQABAAEAAAD+//v/AQABAAEAAAD///v/AQABAAEAAAAAAPv/AQABAAEAAAABAPv/AQABAAEAAAACAPv/AQABAAEAAAADAPv/AQABAAEAAAAEAPv/AQABAAEAAAD5//r/AQACAAIAAAD5//v/AQAAAAEAAAD5//z/AQAAAAEAAAD5//3/AQAAAAEAAAD5//7/AQAAAAEAAAD5////AQAAAAEAAAD5/wAAAQAAAAEAAAD5/wEAAQAAAAEAAAD5/wIAAQAAAAEAAAD5/wMAAQAAAAEAAAD5/wQAAQAAAAEAAAD5/wUAAQACAAEAAAD6//r/AQACAAAAAAD6/wUAAQAAAAAAAAD7//r/AQACAAAAAAD7/wUAAQAAAAAAAAD8//r/AQACAAAAAAD8/wUAAQAAAAAAAAD9//r/AQACAAAAAAD9/wUAAQAAAAAAAAD+//r/AQACAAAAAAD+/wUAAQAAAAAAAAD///r/AQACAAAAAAD//wUAAQAAAAAAAAAAAPr/AQACAAAAAAAAAAUAAQAAAAAAAAABAPr/AQACAAAAAAABAAUAAQAAAAAAAAACAPr/AQACAAAAAAACAAUAAQAAAAAAAAADAPr/AQACAAAAAAADAAUAAQAAAAAAAAAEAPr/AQACAAAAAAAEAAUAAQAAAAAAAAAFAPr/AQAAAAIAAAAFAPv/AQABAAAAAAAFAPz/AQABAAAAAAAFAP3/AQABAAAAAAAFAP7/AQABAAAAAAAFAP//AQABAAAAAAAFAAAAAQABAAAAAAAFAAEAAQABAAAAAAAFAAIAAQABAAAAAAAFAAMAAQABAAAAAAAFAAQAAQABAAAAAAAFAAUAAQABAAIAAAA=")
+tile_set = SubResource("TileSet_kdubu")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=429944265]
+zoom = Vector2(4.5, 4.5)
+
+[node name="NPC" type="CharacterBody2D" parent="." unique_id=182635959]
+position = Vector2(0, 50)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC" unique_id=412743476]
+scale = Vector2(0.5, 0.6)
+shape = SubResource("RectangleShape2D_epypp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NPC" unique_id=507145304]
+sprite_frames = SubResource("SpriteFrames_ir8iy")
+autoplay = "default"
+frame_progress = 0.85306424
