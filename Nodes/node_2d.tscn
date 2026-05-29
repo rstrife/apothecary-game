@@ -98,6 +98,8 @@ sources/1 = SubResource("TileSetAtlasSource_0hol4")
 [sub_resource type="CanvasTexture" id="CanvasTexture_kdubu"]
 diffuse_texture = ExtResource("5_dw0vd")
 
+[sub_resource type="SystemFont" id="SystemFont_2poq4"]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_kdubu"]
 atlas = ExtResource("7_ppjeo")
 region = Rect2(0, 0, 16, 16)
@@ -164,13 +166,20 @@ tile_set = SubResource("TileSet_kdubu")
 zoom = Vector2(4.5, 4.5)
 
 [node name="DialogueBox" type="CanvasGroup" parent="Camera2D" unique_id=1334483031]
-visible = false
 z_index = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="Camera2D/DialogueBox" unique_id=553280716]
 position = Vector2(0, 75)
 scale = Vector2(0.8, 0.8)
 texture = SubResource("CanvasTexture_kdubu")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Camera2D/DialogueBox" unique_id=468675039]
+offset_left = -187.0
+offset_top = 46.0
+offset_right = 188.0
+offset_bottom = 105.0
+theme_override_fonts/normal_font = SubResource("SystemFont_2poq4")
+theme_override_font_sizes/normal_font_size = 13
 
 [node name="NPC" type="Area2D" parent="." unique_id=387327657]
 visibility_layer = 2

@@ -1,0 +1,13 @@
+[gd_resource type="Theme" format=3 uid="uid://dx8rw155hm1d"]
+
+[ext_resource type="Texture2D" uid="uid://cj38i8cpnaqf4" path="res://Sprites/placeholderDialogueBox.png" id="1_v6tc2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gntyr"]
+
+[sub_resource type="FontVariation" id="FontVariation_fos1p"]
+
+[resource]
+default_font = SubResource("FontVariation_fos1p")
+default_font_size = 16
+/icons/Outline = ExtResource("1_v6tc2")
+TextEdit/styles/read_only = SubResource("StyleBoxEmpty_gntyr")
