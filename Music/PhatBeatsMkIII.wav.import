@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ctvasexcltbnb"
-path="res://.godot/imported/PhatBeatsMkIII.wav-075870f7d0ccab60fd8119a67975b816.sample"
+path="res://.godot/imported/PhatBeatsMkIII.wav-aba636c292e8415d0af911f63cbcb5e3.sample"
 
 [deps]
 
-source_file="res://PhatBeatsMkIII.wav"
-dest_files=["res://.godot/imported/PhatBeatsMkIII.wav-075870f7d0ccab60fd8119a67975b816.sample"]
+source_file="res://Music/PhatBeatsMkIII.wav"
+dest_files=["res://.godot/imported/PhatBeatsMkIII.wav-aba636c292e8415d0af911f63cbcb5e3.sample"]
 
 [params]
 
