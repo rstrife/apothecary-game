@@ -7,29 +7,49 @@ public partial class Walk : CharacterBody2D
 	[Export]
 	public int Speed { get; set; } = 100;
 	private AnimatedSprite2D _animatedSprite;
+	
 
+	// Retrieves animated sprites
 	public override void _Ready()
     {
         _animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
     }
 
-	public override void _Process(double delta)
-    {
-        _animatedSprite.Play("default");
-    }
-
-
-	// Called when the node enters the scene tree for the first time.
+	// Handles input 
 	public void GetInput()
 	{
 		Vector2 inputDirection = Input.GetVector("left", "right", "up", "down");
+
 		Velocity = inputDirection * Speed;
+		
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	// Handles movement
 	public override void _PhysicsProcess(double delta)
 	{
 		GetInput();
 		MoveAndSlide();
 	}
+
+	// Handles animation changes between directions
+    public override void _Input(InputEvent @event)
+    {
+        base._Input(@event);
+		if (@event.IsActionPressed("up"))
+		{
+			_animatedSprite.Play("up");
+		}
+		else if (@event.IsActionPressed("down"))
+		{
+			_animatedSprite.Play("down");
+		}
+		else if (@event.IsActionPressed("left"))
+		{
+			_animatedSprite.Play("left");
+		}
+		else if (@event.IsActionPressed("right"))
+		{
+			_animatedSprite.Play("right");
+		}
+    }
 }
